@@ -1,0 +1,140 @@
+/* ============================================================
+   全屏铺满 · 灰 / 白 / 黑 三色 · 表格布局
+   ============================================================ */
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+body {
+  background: #ffffff;
+  color: #000000;
+  font-family: "Times New Roman", Times, "宋体", SimSun, serif;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.sprite { position: absolute; width: 0; height: 0; overflow: hidden; }
+
+a { color: #000000; text-decoration: underline; }
+a:visited { color: #595959; }
+a:hover { color: #000000; background: #d4d4d4; }
+a:active { color: #ffffff; background: #000000; }
+
+/* ---------- 全屏布局 ---------- */
+.layout { width: 100%; }
+.side { padding: 10px 6px 10px 10px; }
+.content { padding: 10px 10px 10px 6px; }
+
+.box {
+  background: #ffffff;
+  border-color: #000000;
+}
+
+.boxhead {
+  background: #404040;
+  color: #ffffff;
+  font-family: Arial, "宋体", sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px 6px;
+}
+
+.boxbody { padding: 7px 8px; }
+.loading { color: #595959; font-style: italic; padding: 8px; }
+
+/* ---------- 分类链接 ---------- */
+.catlink {
+  display: block;
+  padding: 3px 2px;
+  text-decoration: underline;
+  font-size: 14px;
+}
+.catlink .cat-icon { width: 13px; height: 13px; vertical-align: -2px; margin-right: 4px; }
+.catlink.active {
+  background: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  padding-left: 4px;
+}
+.catlink.active:visited { color: #ffffff; }
+.catcount { font-family: Arial, sans-serif; font-size: 11px; }
+
+/* ---------- 工具栏 ---------- */
+.toolbar {
+  background: #c0c0c0;
+  border-bottom: 1px solid #000000;
+  padding: 6px 8px;
+}
+.searchform { margin: 0; white-space: nowrap; }
+.toollabel { font-family: Arial, "宋体", sans-serif; font-size: 12px; }
+.searchform input[type=text] {
+  font-family: Arial, "宋体", sans-serif;
+  font-size: 12px;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #595959 #ffffff #ffffff #595959;
+  padding: 1px 4px;
+  width: 150px;
+}
+.btn {
+  font-family: Arial, "宋体", sans-serif;
+  font-size: 12px;
+  background: #c0c0c0;
+  border: 3px solid;
+  border-color: #ffffff #595959 #595959 #ffffff;
+  padding: 1px 10px;
+  cursor: pointer;
+  color: #000000;
+}
+.btn:active { border-color: #595959 #ffffff #ffffff #595959; }
+.searchform select {
+  font-family: Arial, "宋体", sans-serif;
+  font-size: 12px;
+  background: #ffffff;
+  border: 2px solid;
+  border-color: #595959 #ffffff #ffffff #595959;
+  padding: 0;
+}
+
+/* ---------- 文件表 ---------- */
+.colhead {
+  background: #d4d4d4;
+  border-bottom: 2px solid #000000;
+  font-family: Arial, "宋体", sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+}
+.colhead td { padding: 5px 4px; white-space: nowrap; }
+
+.file-row td {
+  padding: 5px 4px;
+  border-bottom: 1px solid #c0c0c0;
+  vertical-align: middle;
+  font-size: 14px;
+}
+.file-row:hover td { background: #ebebeb; }
+.rownum { font-family: Arial, sans-serif; color: #595959; font-size: 12px; }
+.file-icon { width: 16px; height: 16px; vertical-align: -3px; margin-right: 4px; }
+.file-name { font-weight: bold; }
+.file-note { display: block; color: #595959; font-size: 11px; font-style: italic; padding-left: 20px; }
+.catword { color: #000000; font-weight: bold; font-family: Arial, sans-serif; font-size: 12px; }
+.num { font-family: Arial, sans-serif; }
+.datecell { font-family: Arial, sans-serif; font-size: 12px; }
+.actlinks { white-space: nowrap; font-family: Arial, "宋体", sans-serif; font-size: 12px; }
+.actlinks a { margin-right: 6px; }
+
+.status {
+  margin: 8px 0 0;
+  padding: 5px 8px;
+  background: #ffffff;
+  border: 1px solid #000000;
+  font-family: Arial, "宋体", sans-serif;
+  font-size: 12px;
+}
