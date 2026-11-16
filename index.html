@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文件列表</title>
+<link rel="stylesheet" href="assets/retro.css">
+</head>
+<body>
+
+<svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-arrow" viewBox="0 0 16 16">
+    <path d="M3 3l6 5-6 5z" fill="#000000"/>
+  </symbol>
+  <symbol id="i-code" viewBox="0 0 24 24">
+    <path d="M4 2h11l5 5v15H4z" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <path d="M15 2v5h5" fill="none" stroke="#000000" stroke-width="2"/>
+    <path d="m9 11-3 3 3 3m6-6 3 3-3 3" fill="none" stroke="#000000" stroke-width="2"/>
+  </symbol>
+  <symbol id="i-disk" viewBox="0 0 24 24">
+    <path d="M3 2h14l4 4v16H3z" fill="#ffffff" stroke="#000000" stroke-width="2"/>
+    <path d="M7 2v7h10V2M7 22v-8h10v8" fill="none" stroke="#000000" stroke-width="2"/>
+    <path d="M14 3v4h3V3z" fill="#000000"/>
+  </symbol>
+</svg>
+
+<table class="layout" width="100%" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td class="side" valign="top" width="210">
+  <table class="box" width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr><td class="boxhead">分类目录</td></tr>
+    <tr><td class="boxbody" id="catList">
+      <div class="loading">读取中…</div>
+    </td></tr>
+  </table>
+</td>
+
+<td class="content" valign="top">
+  <table class="box" width="100%" border="1" cellspacing="0" cellpadding="0">
+    <tr><td class="boxhead" colspan="6">文件列表</td></tr>
+    <tr><td colspan="6" class="toolbar">
+      <form class="searchform" onsubmit="return false;">
+        <span class="toollabel">查找文件：</span>
+        <input type="text" id="searchInput" size="18" maxlength="40">
+        <input type="button" class="btn" id="searchBtn" value="搜索">
+        <span class="toollabel">排序：</span>
+        <select id="sortSelect" size="1">
+          <option value="date">最新上传</option>
+          <option value="name">文件名 A-Z</option>
+          <option value="size">由大到小</option>
+        </select>
+      </form>
+    </td></tr>
+    <tr class="colhead">
+      <td align="center" width="46">序</td>
+      <td>文件名</td>
+      <td align="center" width="74">分类</td>
+      <td align="center" width="86">大小</td>
+      <td align="center" width="150">上传时间</td>
+      <td align="center" width="80">操作</td>
+    </tr>
+    <tbody id="fileBody">
+      <tr><td colspan="6" class="loading">读取中…</td></tr>
+    </tbody>
+  </table>
+
+  <p class="status" id="resultInfo"></p>
+</td>
+</tr>
+</table>
+
+<script type="application/json" id="fallback-data">
+{
+  "files": [
+    {"id":"3f80e8ba3596fc6a626e334924b37f22","name":"HttpServerList.lua","category":"lua","ext":"lua","size":"2.18 KB","bytes":2232,"uploadedAt":"2026-11-16 23:23:13"},
+    {"id":"4fd7ae0a239e05986d86f07103d66fda","name":"HttpArenaTab.lua","category":"lua","ext":"lua","size":"602 B","bytes":602,"uploadedAt":"2026-11-16 23:23:00"},
+    {"id":"5f3fbc57cdaaf0038ea7e45340cb4b98","name":"http.lua","category":"lua","ext":"lua","size":"9.14 KB","bytes":9363,"uploadedAt":"2026-11-16 23:22:20"}
+  ]
+}
+</script>
+<script src="assets/retro.js"></script>
+</body>
+</html>
