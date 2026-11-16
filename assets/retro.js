@@ -196,24 +196,17 @@
         var name = a.getAttribute('data-name') || '';
         if (!url) return;
 
-        // 通过 blob 下载：地址栏不出现外链，链接不在 DOM 中留存
-        fetch(url)
-          .then(function (r) {
-            if (!r.ok) throw new Error('HTTP ' + r.status);
-            return r.blob();
-          })
-          .then(function (blob) {
-            var objectUrl = URL.createObjectURL(blob);
-            var tmp = document.createElement('a');
-            tmp.href = objectUrl;
-            tmp.download = name;
-            tmp.style.display = 'none';
-            document.body.appendChild(tmp);
-            tmp.click();
-            document.body.removeChild(tmp);
-            setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 60000);
-          })
-          .catch(function () { window.location.href = url; });
+        // 直接触发下载：顶层导航不受混合内容/CORS 限制，
+        // 适用于 GitHub Pages 等 HTTPS 静态托管环境。
+        // 临时链接点击后立即移除，页面与 DOM 均不留痕。
+        var tmp = document.createElement('a');
+        tmp.href = url;
+        tmp.download = name;
+        tmp.rel = 'noopener';
+        tmp.style.display = 'none';
+        document.body.appendChild(tmp);
+        tmp.click();
+        document.body.removeChild(tmp);
       });
     });
   }
